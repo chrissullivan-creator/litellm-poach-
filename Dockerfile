@@ -39,7 +39,7 @@ ENV NEXT_TELEMETRY_DISABLED=1 \
 WORKDIR /ui
 
 COPY ui/litellm-dashboard/package.json ui/litellm-dashboard/package-lock.json ./
-RUN --mount=type=cache,target=/root/.npm npm ci --prefer-offline
+RUN --mount=type=cache,id=s/28efe382-07b5-4e40-a97a-108e21beb078-/root/.npm,target=/root/.npm npm ci --prefer-offline
 
 COPY ui/litellm-dashboard/ ./
 RUN npm run build
